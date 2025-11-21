@@ -10,6 +10,16 @@ layout: layout.html
       </h2>
       <p class="lead">Por {{ post.data.author }}</p>
       <p>Postado em {{ post.data.posted_at }}</p>
+
+      {% if post.data.tags %}
+        <p>
+          <strong>Tags:</strong>
+          {% for tag in post.data.tags %}
+            <span class="badge bg-secondary">{{ tag }}</span>
+          {% endfor %}
+        </p>
+      {% endif %}
+
       <p>
         {{ post.data.resume }}
       </p>
